@@ -36,15 +36,18 @@ int main (){
     #pragma endregion task3
 
     #pragma region task4
-    int a,b;
-    cin >> a >> b;
-    cout << leastCommonDivisor(a,b) << endl;
+    // int a,b;
+    // cin >> a >> b;
+    // cout << leastCommonDivisor(a,b) << endl;
     #pragma endregion task4
 
     #pragma region task5
     #pragma endregion task5
 
     #pragma region task6
+    int a;
+    cin >> a;
+    cout << isPrime(a) << endl;
     #pragma endregion task6
 
     #pragma region task7
@@ -92,7 +95,15 @@ int leastCommonDivisor(int a, int b) {
 int nThFibonacci(int n) {
 
 }
-int isPrime(int n);
+int isPrime(int n) {
+    for(int i = 2; i < n/2; i++) {
+        if(n % i == 0) {
+            return 0;
+        }
+    }
+
+    return 1;
+}
 int aDivB(int a, int b);
 double circleArea(unsigned radius);
 unsigned input(unsigned n);
