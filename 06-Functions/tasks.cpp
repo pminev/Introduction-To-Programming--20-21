@@ -45,12 +45,15 @@ int main (){
     #pragma endregion task5
 
     #pragma region task6
-    int a;
-    cin >> a;
-    cout << isPrime(a) << endl;
+    // int a;
+    // cin >> a;
+    // cout << isPrime(a) << endl;
     #pragma endregion task6
 
     #pragma region task7
+    int x,y;
+    cin >> x >> y;
+    cout << aDivB(x,y) << endl;
     #pragma endregion task7
 
 
@@ -104,7 +107,20 @@ int isPrime(int n) {
 
     return 1;
 }
-int aDivB(int a, int b);
+int aDivB(int a, int b) {
+    int tempA = a;
+    unsigned count = 0;
+    while(tempA) {
+        if(tempA % b == 0) {
+            count++;
+        } else {
+            break;
+        }
+            tempA /= b;
+    }
+
+    return count;
+}
 double circleArea(unsigned radius);
 unsigned input(unsigned n);
 void print(unsigned n);
