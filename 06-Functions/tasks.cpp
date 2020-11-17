@@ -30,12 +30,15 @@ int main (){
     #pragma endregion task2
 
     #pragma region task3
-    int a,b;
-    cin >> a >> b;
-    cout << pow(a,b) << endl;
+    // int a,b;
+    // cin >> a >> b;
+    // cout << pow(a,b) << endl;
     #pragma endregion task3
 
     #pragma region task4
+    int a,b;
+    cin >> a >> b;
+    cout << leastCommonDivisor(a,b) << endl;
     #pragma endregion task4
 
     #pragma region task5
@@ -77,7 +80,7 @@ int pow(int num, int power) {
 
 int leastCommonDivisor(int a, int b) {
     int maxNum = max(a,b);
-    for(int i = 1; i <= maxNum; i++) {
+    for(int i = 2; i <= maxNum; i++) {
         if((a % i == 0) && (b % i == 0)) {
             return i;
         }
