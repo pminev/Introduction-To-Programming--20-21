@@ -17,6 +17,7 @@ unsigned baumSweetNumber(int n);
 void printAllDeadlyNumbersToN(int n);
 unsigned long long pow(int number, int power);
 int numberDigitLengt(int num);
+unsigned bitLen(unsigned n);
 
 using std::cin;
 using std::cout;
@@ -59,10 +60,10 @@ int main(){
     #pragma endregion task7
     #pragma region task8
 
-    unsigned n;
-    cin >> n;
+    // unsigned n;
+    // cin >> n;
 
-    findFirstNAutomorphNumbers(n);
+    // findFirstNAutomorphNumbers(n);
 
     #pragma endregion task8
     #pragma region task9
@@ -85,11 +86,11 @@ int main(){
     #pragma endregion task10
     #pragma region task11
 
-    // int n;
+    int n;
 
-    //  cin >> n;
+     cin >> n;
 
-    //  cout << baumSweetNumber(n) << endl;
+     cout << baumSweetNumber(n) << endl;
 
     #pragma endregion task11
     #pragma region task12
@@ -120,9 +121,18 @@ void printAllDeadlyNumbersToN(int n) {
     }
 }
 
+unsigned bitLen(unsigned n) {
+    int count = 0;
+    
+    while(n) {
+        count++;
+        n /= 2;
+    }
+}
+
 unsigned baumSweetNumber(int n) {
     unsigned zerosCount = 0;
-
+    unsigned bitLength = bitLen(n);
     for(int i = 0; i < 32; i++) {
         if(!(n & (1 << i))) {
             zerosCount++;
