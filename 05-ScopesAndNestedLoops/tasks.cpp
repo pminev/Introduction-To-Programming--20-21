@@ -15,6 +15,8 @@ int mirrorNumber(int number);
 unsigned decryptNumber(unsigned long long n);
 unsigned baumSweetNumber(int n);
 void printAllDeadlyNumbersToN(int n);
+unsigned long long pow(int number, int power);
+int numberDigitLengt(int num);
 
 using std::cin;
 using std::cout;
@@ -57,10 +59,10 @@ int main(){
     #pragma endregion task7
     #pragma region task8
 
-    // unsigned n;
-    // cin >> n;
+    unsigned n;
+    cin >> n;
 
-    // findFirstNAutomorphNumbers(n);
+    findFirstNAutomorphNumbers(n);
 
     #pragma endregion task8
     #pragma region task9
@@ -92,11 +94,11 @@ int main(){
     #pragma endregion task11
     #pragma region task12
 
-    int n;
+    // int n;
 
-    cin >> n;
+    // cin >> n;
 
-    printAllDeadlyNumbersToN(n);
+    // printAllDeadlyNumbersToN(n);
 
     #pragma endregion task12
 }   
@@ -185,29 +187,43 @@ void encryptNumber(const int number) {
 }
 
 void findFirstNAutomorphNumbers(unsigned n) {
-    unsigned temp = 0;
-
-    for(unsigned i = 5, count = 0; count < n ; i++) {
+    unsigned long long temp = 0;
+    for(unsigned i = 5, count = 0; count <= n ; i++) {
         temp = i*i;
-
-        if(i > 0 && i < 9) {
-            if(temp % 10 == i) {
-                count++;
-                cout << i << endl;
-            }   
-        } else if(i > 9 && i < 100) {
-            if(temp % 100 == i) {
-                cout << i << endl;
-                count++;
-            }
-        } else {
-            if(temp % 1000 == i) {
-                cout << i << endl;
-                count++;
-            }
+        cout << temp << endl;
+        if(temp % pow(10, numberDigitLengt(i)) == i) {
+            count++;
+            //cout << i << endl;
         }
     }
 }
+
+int numberDigitLengt(int num) {
+    int tempNum = num;
+    int count = 0;
+
+    while(tempNum) {
+        tempNum /= 10;
+        count++;
+    }
+
+    return count;
+}
+
+unsigned long long pow(int number, int power) {
+    unsigned long long result = 1;
+
+    if(number < 0 || power < 0) {
+        return 0;
+    }
+
+    for(int i = 0; i < power; i++) {
+        result *= number;
+    }
+
+    return result;
+}
+
 void printAllLinearIndependantVectors(unsigned int m, unsigned int n){
     for(int i = m; i <= n; i++) {
         for(int j = m; j <= n; j++) {
