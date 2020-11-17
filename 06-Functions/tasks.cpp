@@ -42,6 +42,9 @@ int main (){
     #pragma endregion task4
 
     #pragma region task5
+    int n;
+    cin >> n;
+    cout << nThFibonacci(n) << endl;
     #pragma endregion task5
 
     #pragma region task6
@@ -63,9 +66,9 @@ int main (){
     #pragma endregion task8
 
     #pragma region task9
-    unsigned n;
-    cin >> n;
-    print(input(n));
+    // unsigned n;
+    // cin >> n;
+    // print(input(n));
     #pragma endregion task9
 
 
@@ -108,7 +111,24 @@ int leastCommonDivisor(int a, int b) {
 }
 
 int nThFibonacci(int n) {
+    int prev = 1;
+    int curr = 1;
+    int next = 2;
 
+    if(n <= 0 || n == 1) {
+        return 1;
+    }
+
+    for(int i = 3; i <= n; i++) {
+        
+        prev = curr;
+        curr = next;
+        next = prev + curr;
+        
+        if(i == n) {
+            return curr;
+        }
+    }
 }
 int isPrime(int n) {
     for(int i = 2; i < n/2; i++) {
