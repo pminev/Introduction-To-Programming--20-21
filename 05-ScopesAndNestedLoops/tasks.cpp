@@ -12,6 +12,7 @@ void printAllNDigitPowers(unsigned int n);
 void findFirstNAutomorphNumbers(unsigned n);
 void encryptNumber(const int number);
 int mirrorNumber(int number);
+unsigned decryptNumber(unsigned long long n);
 
 using std::cin;
 using std::cout;
@@ -71,14 +72,37 @@ int main(){
     #pragma endregion task9
     #pragma region task10
 
-     unsigned n;
+     unsigned long long n;
 
      cin >> n;
 
-     decryptNumber(n);
+     cout << mirrorNumber(decryptNumber(n)) << endl;
 
     #pragma endregion task10
 }   
+
+unsigned decryptNumber(unsigned long long n) {
+    unsigned long long nTemp = n;
+    unsigned count = 0;
+    unsigned result = 0;
+
+    while(nTemp) {
+        if(nTemp % 10) {
+            count++;
+            nTemp /= 10;
+
+        } else {
+            result = result * 10 + count;
+            count = 0;
+            nTemp /= 10;
+            
+        }
+            
+    }
+    result = result * 10 + count;   
+
+    return result;
+}
 
 int mirrorNumber(const int number) {
     int newNumber = 0;
