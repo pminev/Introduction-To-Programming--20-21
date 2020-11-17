@@ -14,6 +14,7 @@ void encryptNumber(const int number);
 int mirrorNumber(int number);
 unsigned decryptNumber(unsigned long long n);
 unsigned baumSweetNumber(int n);
+void printAllDeadlyNumbersToN(int n);
 
 using std::cin;
 using std::cout;
@@ -82,14 +83,40 @@ int main(){
     #pragma endregion task10
     #pragma region task11
 
-    int n;
+    // int n;
 
-     cin >> n;
+    //  cin >> n;
 
-     cout << baumSweetNumber(n) << endl;
+    //  cout << baumSweetNumber(n) << endl;
 
     #pragma endregion task11
+    #pragma region task12
+
+    int n;
+
+    cin >> n;
+
+    printAllDeadlyNumbersToN(n);
+
+    #pragma endregion task12
 }   
+
+void printAllDeadlyNumbersToN(int n) {
+    unsigned onesCount = 0;
+    if(n > 0) {
+        for(int i = 1; i <= n; i++){
+            for(int j = 0; j < 32; j++) {
+                if(i & (1 << j)) {
+                    onesCount++;
+                }
+            }
+            if(isPrime(onesCount)) {
+                cout << i << endl;
+            }
+                onesCount = 0;
+        }
+    }
+}
 
 unsigned baumSweetNumber(int n) {
     unsigned zerosCount = 0;
