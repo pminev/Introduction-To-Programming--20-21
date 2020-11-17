@@ -15,7 +15,7 @@ int mirrorNumber(int number);
 unsigned decryptNumber(unsigned long long n);
 unsigned baumSweetNumber(int n);
 void printAllDeadlyNumbersToN(int n);
-
+//testasdsad
 using std::cin;
 using std::cout;
 using std::endl;
