@@ -13,6 +13,7 @@ void findFirstNAutomorphNumbers(unsigned n);
 void encryptNumber(const int number);
 int mirrorNumber(int number);
 unsigned decryptNumber(unsigned long long n);
+unsigned baumSweetNumber(int n);
 
 using std::cin;
 using std::cout;
@@ -72,14 +73,40 @@ int main(){
     #pragma endregion task9
     #pragma region task10
 
-     unsigned long long n;
+    //  unsigned long long n;
+
+    //  cin >> n;
+
+     //cout << mirrorNumber(decryptNumber(n)) << endl;
+
+    #pragma endregion task10
+    #pragma region task11
+
+    int n;
 
      cin >> n;
 
-     cout << mirrorNumber(decryptNumber(n)) << endl;
+     cout << baumSweetNumber(n) << endl;
 
-    #pragma endregion task10
+    #pragma endregion task11
 }   
+
+unsigned baumSweetNumber(int n) {
+    unsigned zerosCount = 0;
+
+    for(int i = 0; i < 32; i++) {
+        if(!(n & (1 << i))) {
+            zerosCount++;
+        } else {
+            if(zerosCount % 2) {
+                return 0;
+            }
+            zerosCount = 0;
+        }
+    }
+
+    return 1;
+}
 
 unsigned decryptNumber(unsigned long long n) {
     unsigned long long nTemp = n;
