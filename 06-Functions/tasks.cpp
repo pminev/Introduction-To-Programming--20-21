@@ -154,8 +154,9 @@ int aDivB(int a, int b) {
     return count;
 }
 double circleArea(double r) {
-    if(r >= 0)
+    if(r >= 0) {
         return 3.14159*r*r;
+    }
 }
 int input(unsigned n) {
     int max, temp;
