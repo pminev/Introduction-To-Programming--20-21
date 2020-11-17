@@ -30,6 +30,9 @@ int main (){
     #pragma endregion task2
 
     #pragma region task3
+    int a,b;
+    cin >> a >> b;
+    cout << pow(a,b) << endl;
     #pragma endregion task3
 
     #pragma region task4
