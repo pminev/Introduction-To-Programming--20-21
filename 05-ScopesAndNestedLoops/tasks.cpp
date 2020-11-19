@@ -86,11 +86,12 @@ int main(){
     #pragma endregion task10
     #pragma region task11
 
-    int n;
+    
+    // int n;
 
-     cin >> n;
+    //  cin >> n;
 
-     cout << baumSweetNumber(n) << endl;
+    //  cout << baumSweetNumber(n) << endl;
 
     #pragma endregion task11
     #pragma region task12
