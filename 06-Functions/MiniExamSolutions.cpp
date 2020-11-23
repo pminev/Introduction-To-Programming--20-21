@@ -2,15 +2,15 @@
 
 bool IsBitZero(int number, unsigned short bit)
 {
-    // От логическите операции знаем, че чрез побитовото И(&)
-    // можем да проверим стойността в даден бит
+    // From logical operations we know that we can check value in a single bit
+    // using logical AND (&)
     // 1 & 1 = 1  
     // 0 & 1 = 0
     bool isOne = number & (1 << bit); 
     return !isOne;
 }
-// Свалените битове са нулите в побитовата репрезентация,
-// съответно единиците са вдигнати битове
+
+// Fallen bits are the zeros in the number's binary representation
 bool HasEvenFallenBits(int number)
 {
     unsigned short bitsCount = sizeof(int) * 8;
@@ -69,7 +69,7 @@ int main() {
     unsigned int begin, end;
     std::cin >> begin >> end;
 
-    // Трябва да се погрижем ако ни е подаден обърнат интервал
+    // We should check if the given interval is in the correct order
     if (begin > end)
     {
         unsigned int temp = begin;
@@ -79,7 +79,7 @@ int main() {
 
     PrintSumsWithEvenFallenBits(begin, end);
 
-    // Бонус задачката
+    // Bonus task
     std::cout << "\n\n\n Bonus task: \n\n";
     std::cout << "Longest sequence of zeros in " << begin << " is : " << LongestSequenceOfZeros(begin) << '\n';
     std::cout << "Longest sequence of zeros in " << end<< " is : " << LongestSequenceOfZeros(end) << '\n';
