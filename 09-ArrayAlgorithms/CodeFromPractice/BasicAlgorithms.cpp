@@ -104,7 +104,7 @@ void swap(int& first, int& second)
 // Insertion sort is an algorithm for sorting an array.
 void InsertionSort(int arr[MAX_SIZE], unsigned int size)
 {
-	for (int i = 0; i < size; i++)
+	for (int i = 1; i < size; i++)
 	{
 		int currentElemIndex = i;
 		int previousElemIndex = i-1;
@@ -143,7 +143,7 @@ void TestBinarySearch(int arr[MAX_SIZE], unsigned int size)
 int main() {
 
 	// To use real random generated elements we should seed the current time
-	//std::srand(std::time(0));
+	std::srand(std::time(0));
 
 	int arr[MAX_SIZE] = { 0, };
 
