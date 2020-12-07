@@ -12,6 +12,8 @@
 
 #include <iostream>
 
+static const int MAX_SIZE = 100;
+
 // Input new values in a given Matrix 
 void EnterMatrix(int mat[MAX_SIZE][MAX_SIZE], int rows, int cols) {
     for (int i = 0; i < rows; i++) {
