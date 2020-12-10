@@ -21,6 +21,8 @@ From now on, each variable will have those features:
 
 [References](https://en.wikipedia.org/wiki/Reference_(C%2B%2B))
 
+[More about pointers and references](https://www3.ntu.edu.sg/home/ehchua/programming/cpp/cp4_PointerReference.html)
+
 ---
 
 [Memory types - Static, Stack and Heap](https://stackoverflow.com/questions/408670/stack-static-and-heap-in-c)
