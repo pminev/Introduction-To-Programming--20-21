@@ -11,7 +11,7 @@
 
 #include <iostream>
 
-int sumNumbers(int n)
+int sumNumbers(int n)   // sum form 0 to n
 {
     if (n == 0)
     {
@@ -22,9 +22,10 @@ int sumNumbers(int n)
     return result;
 }
 
-void printFromTo(int a, int b)
+void printFromTo(int a, int b)  // [a; b]
 {
-    if (a >= b) {
+    if (a > b)
+    {
         return;
     }
 
@@ -34,7 +35,7 @@ void printFromTo(int a, int b)
 
 void forRecursive(int i, int n)
 {
-    if (i >= n)
+    if (i < n)
     {
         return;
     }
@@ -46,15 +47,24 @@ void printArray(int arr[], int n)
 {
     if (n <= 0)
     {
-        return;   
+        return;
     }
+
     printArray(arr, n - 1);
     std::cout << arr[n - 1] << " ";
 }
+// arr = { 1, 2, 3}; n = 3;
+// 1 2 3
 
 void printArrayReversed(int arr[], int n)
 {
-    // TODO
+    if (n <= 0)
+    {
+        return;
+    }
+
+    std::cout << arr[n - 1] << " ";
+    printArrayReversed(arr, n - 1);
 }
 
 void printWithPointerArithmetics(int arr[], int n)
@@ -64,6 +74,7 @@ void printWithPointerArithmetics(int arr[], int n)
         return;
     }
     std::cout << arr[0] << " ";
+    //arr size == n - 1
     printWithPointerArithmetics(arr + 1, n - 1);
 }
 
@@ -77,10 +88,16 @@ void printString(char str[])
     printString(str + 1);
 }
 
+// n0 = 0, n1 = 1 ..., nI = nI-1 + nI-2
 int fibonacci(int n)
 {
-    // TODO
-    return 0;
+    if (n = 0) {
+        return 0;
+    }
+    if (n = 1) {
+        return 1;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
 bool binarySearchHelper(int arr[], int lowerBound, int upperBound, int elem)
@@ -112,11 +129,18 @@ bool binarySearch(int arr[], int n, int elem)
 
 int main()
 {
-    int n;
-    std::cin >> n;
-    sumNumbers(n);
-    int arr[] = {1,2,3,4,5,6}; 
-    printArray(arr, 4);
-    std::cout << binarySearch(arr, 6, 4);
+    int m, n;
+    // std::cin >> n;
+    // std::cin >> m;
+    
+    // std::cout << sumNumbers(n) << std::endl;
+    // printFromTo(n, m);
+
+    int arr[] = {1, 2, 3, 4, 5, 6};
+    printArray(arr, 6);
+    std::cout << "\n";
+    printArrayReversed(arr, 6);
+    
+    // std::cout << binarySearch(arr, 6, 4) << "\n";
     return 0;
 }
