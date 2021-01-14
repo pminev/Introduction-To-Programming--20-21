@@ -46,7 +46,7 @@
     int arr[] = { 1, 2, 3, 4, 5 };
     unsigned count = 5;
     int acc = 0;
-    reduce(sum, acc, arr);
+    reduce(sum, acc, arr, count);
 
     Изход: 15
     ```
