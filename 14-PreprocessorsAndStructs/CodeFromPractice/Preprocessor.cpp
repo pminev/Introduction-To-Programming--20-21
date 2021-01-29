@@ -6,7 +6,7 @@
  * @file   Preprocessor.cpp
  * @author Plamen Minev
  * @date   01.2021
- * @brief  Basic function pointers examples.
+ * @brief  Basic preprocesor usage.
  */
 
 #include <iostream>
